@@ -1,5 +1,5 @@
 
-// run in the bin directory: mongod.exe --dbpath /...
+// run in the bin directory: mongod.exe --dbpath "C:\Users\mcaenepe\Documents\mongodata"
 
 var express = require("express");
 var bodyParser = require("body-parser");
@@ -23,6 +23,14 @@ app.post("/todos", (req, res) => {
     }, (e) => {
         res.status(400).send(e);
     });
+});
+
+app.get("/todos", (req, res) => {
+    Todo.find().then((todos) => {
+        res.send({todos});
+    }, (e) => {
+        res.status(400).send(e);
+    })
 });
 
 app.listen(3000, () => {
