@@ -1,5 +1,6 @@
 
 // run in the bin directory: mongod.exe --dbpath "C:\Users\mcaenepe\Documents\mongodata"
+// C:\Program Files\MongoDB\Server\4.0\bin
 
 var express = require("express");
 var bodyParser = require("body-parser");
